@@ -19,11 +19,8 @@ class Nav extends Component {
         <div style={this.getNavStyle('/')}>
           <Link style={styles.linkItem} to='/'>Home</Link>
         </div>
-        <div style={this.getNavStyle('/thunk')}>
-          <Link style={styles.linkItem} to='/thunk'>ReduxThunk</Link>
-        </div>
-        <div style={this.getNavStyle('/saga', true)}>
-          <Link style={styles.linkItem} to='/saga'>ReduxSaga</Link>
+        <div style={this.getNavStyle('/posts', true)}>
+          <Link style={styles.linkItem} to='/posts'>Posts</Link>
         </div>
       </div>
     )

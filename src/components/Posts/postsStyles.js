@@ -1,4 +1,4 @@
-export const thunkStyles = {
+export const postsStyles = {
   mainContainer: {
     padding: 40
   },
@@ -17,6 +17,7 @@ export const thunkStyles = {
     width: 150,
     padding: 0,
     boxSizing: 'border-box',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginRight: 20
   }
 }

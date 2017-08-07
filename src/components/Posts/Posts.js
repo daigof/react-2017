@@ -1,17 +1,16 @@
 import React from 'react'
-import {
-  fetchPosts
-} from '../../actions'
+import { fetchPosts, fetchPostsSaga } from '../../actions'
 import { connect } from 'react-redux'
 import spinner from './spinner.gif'
-import {thunkStyles as styles} from './thunkStyles'
+import {postsStyles as styles} from './postsStyles'
 
-export const PostsUI = ({posts, isFetching, onGetPostsClick}) => {
+export const PostsUI = ({posts, isFetching, getWithThunkClick, getWithSagaClick}) => {
   let spinnerElm = isFetching ? <img src={spinner} alt='spinner' /> : null
   return (
     <div style={styles.mainContainer}>
       <div>
-        <button onClick={onGetPostsClick} style={styles.button}>Get Posts</button>
+        <button onClick={getWithThunkClick} style={styles.button}>Get With Thunk</button>
+        <button onClick={getWithSagaClick} style={styles.button}>Get With Saga</button>
       </div>
       <div>{spinnerElm}</div>
       <TitleList posts={posts} />
@@ -39,8 +38,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetPostsClick: () => {
+    getWithThunkClick: () => {
       dispatch(fetchPosts())
+    },
+    getWithSagaClick: () => {
+      dispatch(fetchPostsSaga())
     }
   }
 }
