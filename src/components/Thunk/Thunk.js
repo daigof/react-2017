@@ -1,16 +1,12 @@
 import React from 'react'
 import {
   fetchPosts
-} from '../../actions/actions'
+} from '../../actions'
 import { connect } from 'react-redux'
 import spinner from './spinner.gif'
-import {postsStyles as styles} from './postsStyles'
-// import * as gStyles from '../../styleUtils'
-// import {Link} from 'react-router-dom'
-// import Radium from 'radium'
-// import { withRouter } from 'react-router'
+import {thunkStyles as styles} from './thunkStyles'
 
-const PostsUI = ({posts, isFetching, onGetPostsClick}) => {
+export const PostsUI = ({posts, isFetching, onGetPostsClick}) => {
   let spinnerElm = isFetching ? <img src={spinner} alt='spinner' /> : null
   return (
     <div style={styles.mainContainer}>

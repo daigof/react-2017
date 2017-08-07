@@ -1,10 +1,9 @@
 import {
   REQUEST_POSTS,
   RECEIVE_POSTS
-} from '../actions/actions'
-import { combineReducers } from 'redux'
+} from '../actions'
 
-function posts (
+export default function posts (
   state = {
     isFetching: false,
     items: []
@@ -26,9 +25,3 @@ function posts (
       return state
   }
 }
-
-const rootReducer = combineReducers({
-  posts
-})
-
-export default rootReducer

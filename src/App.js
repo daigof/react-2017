@@ -3,12 +3,13 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import './normalize.css'
 import {Nav} from './components/Nav/Nav'
 import { Home } from './components/Home/Home'
-import Posts from './components/Posts/Posts'
+import Thunk from './components/Thunk/Thunk'
+import Saga from './components/Saga/Saga'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import rootReducer from './reducers/reducers'
+import rootReducer from './reducers'
 
 const loggerMiddleware = createLogger()
 
@@ -28,7 +29,8 @@ class App extends Component {
           <div>
             <Nav />
             <Route exact path='/' component={Home} />
-            <Route path='/posts' component={Posts} />
+            <Route path='/thunk' component={Thunk} />
+            <Route path='/saga' component={Saga} />
           </div>
         </BrowserRouter>
       </Provider>

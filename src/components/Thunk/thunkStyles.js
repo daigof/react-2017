@@ -1,4 +1,4 @@
-export const postsStyles = {
+export const thunkStyles = {
   mainContainer: {
     padding: 40
   },

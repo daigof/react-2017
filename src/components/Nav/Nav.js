@@ -6,12 +6,25 @@ import Radium from 'radium'
 import { withRouter } from 'react-router'
 
 class Nav extends Component {
-  render () {
+  getNavStyle (path, isLast) {
     const {location} = this.props
+    return Object.assign({},
+      isLast ? {} : gStyles.rightMargin(30),
+      location.pathname === path ? styles.linkItemActive : {}
+      )
+  }
+  render () {
     return (
       <div style={styles.topNavBar}>
-        <div style={Object.assign({}, gStyles.rightMargin(30), location.pathname === '/' ? styles.linkItemActive : {})}><Link style={styles.linkItem} to='/'>Home</Link></div>
-        <div style={location.pathname === '/posts' ? styles.linkItemActive : {}}><Link style={styles.linkItem} to='/posts'>Posts</Link></div>
+        <div style={this.getNavStyle('/')}>
+          <Link style={styles.linkItem} to='/'>Home</Link>
+        </div>
+        <div style={this.getNavStyle('/thunk')}>
+          <Link style={styles.linkItem} to='/thunk'>ReduxThunk</Link>
+        </div>
+        <div style={this.getNavStyle('/saga', true)}>
+          <Link style={styles.linkItem} to='/saga'>ReduxSaga</Link>
+        </div>
       </div>
     )
   }
