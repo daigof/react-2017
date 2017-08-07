@@ -9,7 +9,9 @@ export const Home = () => (
     <ul>
       <li>create-react-app</li>
       <li>react-router: Dynamic routing (not static like used to be everywhere)</li>
-      <li>Redux with log and thunk middleware for async handling</li>
+      <li>Redux</li>
+      <li>Redux Thunk middleware for async handling</li>
+      <li>Redux Saga middleware for alternative async handling</li>
       <li>Radium for styling</li>
       <li>All Pure JS inline styling pattern. The only CSS is normalize.css for well exactly that normalize browser default styling and some custom body global styles</li>
     </ul>

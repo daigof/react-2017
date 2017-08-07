@@ -5,7 +5,9 @@ Summary of testing libs:
 
 * create-react-app
 * react-router: Dynamic routing (not static like used to be everywhere)
-* Redux with log and thunk middleware for async handling
+* Redux
+* Redux Thunk middleware for async handling
+* Redux Saga middleware for alternative async handling
 * Radium for styling
 * All Pure JS inline styling pattern. The only CSS is normalize.css for well exactly that normalize browser default styling and some custom body global styles
 
