@@ -1,6 +1,6 @@
-import axios from 'axios'
 import { put, takeEvery, call } from 'redux-saga/effects'
 import * as actions from '../actions'
+import axios from 'axios'
 
 // Our worker Saga: will perform the async task
 export function * fetchPosts () {

@@ -4,5 +4,5 @@ import { call } from 'redux-saga/effects'
 // Another Saga
 export function * helloSaga () {
   yield call(delay, 2000)
-  yield console.log('Hello Redux-Saga!')
+  yield call(console.log, 'Hello Redux-Saga!')
 }
